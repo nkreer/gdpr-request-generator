@@ -14,6 +14,8 @@ I hereby request a full copy of the personal data your company processes and sto
 - where the personal data are not collected from myself, any available information as to their source;
 - the existence of automated decision-making, including profiling, referred to in Article 22(1) and (4) of the GDPR and, at least in those cases, meaningful information about the logic involved, as well as the significance and the envisaged consequences of such processing for myself.
 
+Furthermore, I would like the data to be in {{format}}-readable format.
+
 As this is a request conforming to article 15 of the EU-GDPR, it must be granted for free, within one month time. {{proof}}
 
 Looking forward to your reply!
@@ -21,13 +23,15 @@ Looking forward to your reply!
 `;
 
 function assembleProofText(proof){
-	return "\n\nTo prove that I am who I claim to be, I would like to add that " + proof + ".\n\n";
+	return "\n\nTo prove that I am who I claim to be, I would like to add that " + proof + ".\n";
 }
 
 function generate(){
 	var text = requestText;
 	text = text.replace("{{sender}}", document.getElementById("name").value);
-	
+	text = text.replace("{{format}}", document.querySelector('input[name="type"]:checked').value);
+
+	// Add proof
 	var proof = document.getElementById("proof").value;
 	if(proof !== ""){
 		text = text.replace("{{proof}}", assembleProofText(proof));
