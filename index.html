@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>GDPR article 15 request generator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="generator.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<h1>GDPR request generator</h1>
+
+Public organisations (such as public institutions, companies, etc.) likely store personal data that, per article 15 of the EU-GDPR in the European Union, you as a customer are allowed to access. This tool helps you by generating an email asking for the relevant information.<br><br>
+
+<b>Note:</b> The data entered in the form is processed only by your browser and never transferred to the server, so nobody else will ever see it. The administrator of the tool is not a lawyer and therefore not responsible for any legal matters that may arise from the use of this site.
+
+<br><br>
+
+<h2>Details of your request</h2>
+
+<label for="name">Your name</label>
+<input type="text" id="name" name="name" placeholder="John Doe">
+<label for="proof">(Optional) proof that you are who you claim to be, e.g. data that you know they have on you. Never send copies of your ID over the internet.</label>
+<input type="text" name="proof" id="proof" placeholder="my birth date is February 30th, 1970">
+<button onclick="generate();">Generate Request</button>
+
+<br><br>
+
+<textarea id="generatedText" cols="50" rows="20" readonly>Click "Generate Request" to see some text appear here :)</textarea>
+
+</body>
+
+</html>
